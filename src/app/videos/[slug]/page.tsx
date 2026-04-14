@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, ExternalLink, Tag } from 'lucide-react'
-import { getVideoBySlug, getRelatedVideos } from '@/lib/content/adapter'
+import { getVideoBySlug, getRelatedVideos, getVideos } from '@/lib/content/adapter'
 import { VideoEmbed } from '@/components/video/VideoEmbed'
 import { ComplianceSections } from '@/components/video/ComplianceSections'
 import { RelatedContent } from '@/components/video/RelatedContent'
@@ -12,6 +12,11 @@ import { siteConfig } from '@/config/site'
 
 interface VideoDetailPageProps {
   params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+  const videos = await getVideos()
+  return videos.map((v) => ({ slug: v.slug }))
 }
 
 export async function generateMetadata({ params }: VideoDetailPageProps): Promise<Metadata> {

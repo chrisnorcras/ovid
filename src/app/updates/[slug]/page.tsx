@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, ExternalLink, Tag } from 'lucide-react'
-import { getUpdateBySlug } from '@/lib/content/adapter'
+import { getUpdateBySlug, getUpdates } from '@/lib/content/adapter'
 import { getAlertConfig, formatDate } from '@/lib/utils'
 import { siteConfig } from '@/config/site'
 
@@ -17,6 +17,11 @@ const UPDATE_CATEGORY_LABELS: Record<string, string> = {
 
 interface UpdateDetailPageProps {
   params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+  const updates = await getUpdates()
+  return updates.map((u) => ({ slug: u.slug }))
 }
 
 export async function generateMetadata({ params }: UpdateDetailPageProps): Promise<Metadata> {

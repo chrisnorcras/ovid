@@ -9,28 +9,11 @@ export const metadata: Metadata = {
     'Latest OSHA standard changes, penalty updates, enforcement guidance, and industry alerts. Plain-English summaries of regulatory changes that affect your workplace.',
 }
 
-interface UpdatesPageProps {
-  searchParams: Promise<{
-    alertLevel?: string
-    category?: string
-    q?: string
-  }>
-}
-
-export default async function UpdatesPage({ searchParams }: UpdatesPageProps) {
-  const params = await searchParams
-
+export default async function UpdatesPage() {
   const [allUpdates, featuredUpdates] = await Promise.all([
-    getUpdates({
-      alertLevel: params.alertLevel,
-      category: params.category,
-      search: params.q,
-    }),
+    getUpdates(),
     getFeaturedUpdates(2),
   ])
-
-  const hasFilters = params.alertLevel || params.category || params.q
-  const displayFeatured = !hasFilters
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -48,8 +31,8 @@ export default async function UpdatesPage({ searchParams }: UpdatesPageProps) {
         </p>
       </div>
 
-      {/* Featured alerts (only shown when no filters active) */}
-      {displayFeatured && featuredUpdates.length > 0 && (
+      {/* Featured alerts */}
+      {featuredUpdates.length > 0 && (
         <div className="mb-10">
           <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
             Featured Alerts
@@ -64,11 +47,9 @@ export default async function UpdatesPage({ searchParams }: UpdatesPageProps) {
 
       {/* All updates */}
       <div>
-        {displayFeatured && (
-          <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
-            All Updates
-          </h2>
-        )}
+        <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
+          All Updates
+        </h2>
 
         {allUpdates.length > 0 ? (
           <div className="grid gap-4 sm:grid-cols-2">

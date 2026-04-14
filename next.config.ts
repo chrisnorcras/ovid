@@ -1,7 +1,13 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  // On GitHub Pages the site lives at /occvid unless a custom domain is set.
+  // Remove basePath (or set to '') after pointing a custom domain at the repo.
+  basePath: process.env.GITHUB_ACTIONS ? '/occvid' : '',
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
@@ -16,4 +22,6 @@ const nextConfig: NextConfig = {
 export default nextConfig
 
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
-initOpenNextCloudflareForDev()
+if (process.env.NODE_ENV === 'development') {
+  initOpenNextCloudflareForDev()
+}

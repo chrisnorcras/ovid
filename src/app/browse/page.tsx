@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
 import { getVideos } from '@/lib/content/adapter'
 import { BrowsePageClient } from '@/components/browse/BrowsePageClient'
-import type { ContentFilters, Platform, VideoCategory } from '@/lib/types'
 
 export const metadata: Metadata = {
   title: 'Browse Safety Fails',
@@ -10,26 +8,8 @@ export const metadata: Metadata = {
     'Browse our full library of workplace safety fails, OSHA violations, and compliance nightmares. Filter by category, platform, or search by topic.',
 }
 
-interface BrowsePageProps {
-  searchParams: Promise<{
-    category?: string
-    platform?: string
-    sort?: string
-    q?: string
-  }>
-}
-
-export default async function BrowsePage({ searchParams }: BrowsePageProps) {
-  const params = await searchParams
-
-  const filters: ContentFilters = {
-    category: (params.category as VideoCategory | 'all') ?? 'all',
-    platform: (params.platform as Platform | 'all') ?? 'all',
-    sort: (params.sort as ContentFilters['sort']) ?? 'newest',
-    search: params.q ?? '',
-  }
-
-  const videos = await getVideos(filters)
+export default async function BrowsePage() {
+  const allVideos = await getVideos()
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -43,20 +23,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         </p>
       </div>
 
-      {/* Client component handles filtering UI + display */}
-      <Suspense fallback={<BrowseLoading />}>
-        <BrowsePageClient videos={videos} total={videos.length} />
-      </Suspense>
-    </div>
-  )
-}
-
-function BrowseLoading() {
-  return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="aspect-[4/5] animate-pulse rounded-xl bg-gray-100" />
-      ))}
+      {/* Client component handles all filtering and display */}
+      <BrowsePageClient allVideos={allVideos} />
     </div>
   )
 }

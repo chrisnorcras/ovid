@@ -1,29 +1,63 @@
 'use client'
 
-import { Suspense } from 'react'
+import { Suspense, useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { FilterBar } from './FilterBar'
 import { VideoCard } from './VideoCard'
 import type { VideoItem } from '@/lib/types'
 
 interface BrowsePageClientProps {
-  videos: VideoItem[]
-  total: number
+  allVideos: VideoItem[]
 }
 
-export function BrowsePageClient({ videos, total }: BrowsePageClientProps) {
+function BrowseInner({ allVideos }: BrowsePageClientProps) {
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category') ?? 'all'
+  const platform = searchParams.get('platform') ?? 'all'
+  const sort = searchParams.get('sort') ?? 'newest'
+  const q = searchParams.get('q') ?? ''
+
+  const videos = useMemo(() => {
+    let result = [...allVideos]
+    if (category !== 'all') {
+      result = result.filter((v) => v.category === category)
+    }
+    if (platform !== 'all') {
+      result = result.filter((v) => v.sourcePlatform === platform)
+    }
+    if (q) {
+      const query = q.toLowerCase()
+      result = result.filter(
+        (v) =>
+          v.title.toLowerCase().includes(query) ||
+          v.summary.toLowerCase().includes(query) ||
+          v.tags.some((t) => t.toLowerCase().includes(query)) ||
+          v.complianceTakeaway.toLowerCase().includes(query),
+      )
+    }
+    switch (sort) {
+      case 'trending':
+        result.sort((a, b) => b.trendingScore - a.trendingScore)
+        break
+      case 'featured':
+        result.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+        break
+      default:
+        result.sort(
+          (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+        )
+    }
+    return result
+  }, [allVideos, category, platform, sort, q])
+
   return (
     <div className="flex flex-col gap-6">
-      {/* Filters — needs Suspense because it reads searchParams via useSearchParams */}
-      <Suspense fallback={<div className="h-24 animate-pulse rounded-xl bg-gray-100" />}>
-        <FilterBar />
-      </Suspense>
-
-      {/* Results count */}
+      <FilterBar />
       <p className="text-sm text-gray-500">
-        {total === 0 ? 'No results' : `Showing ${total} clip${total !== 1 ? 's' : ''}`}
+        {videos.length === 0
+          ? 'No results'
+          : `Showing ${videos.length} clip${videos.length !== 1 ? 's' : ''}`}
       </p>
-
-      {/* Grid */}
       {videos.length > 0 ? (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {videos.map((video) => (
@@ -34,6 +68,14 @@ export function BrowsePageClient({ videos, total }: BrowsePageClientProps) {
         <EmptyState />
       )}
     </div>
+  )
+}
+
+export function BrowsePageClient({ allVideos }: BrowsePageClientProps) {
+  return (
+    <Suspense fallback={<div className="h-24 animate-pulse rounded-xl bg-gray-100" />}>
+      <BrowseInner allVideos={allVideos} />
+    </Suspense>
   )
 }
 
