@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "occtok",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": [
+    // Enable Node.js APIs
+    // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#nodejs-compatibility-flag
+    "nodejs_compat",
+    // Allow fetching URLs in your app
+    // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#global-fetch-strictly-public
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      // The service name must match "name" above
+      "service": "occtok"
+    }
+  ]
+  // Uncomment to enable R2-based incremental cache (recommended for production):
+  // "r2_buckets": [
+  //   {
+  //     "binding": "NEXT_INC_CACHE_R2_BUCKET",
+  //     "bucket_name": "<YOUR_BUCKET_NAME>"
+  //   }
+  // ],
+  // "images": {
+  //   "binding": "IMAGES"
+  // }
+}

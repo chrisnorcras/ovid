@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Focus visible default via Tailwind's ring utilities */
+  :focus-visible {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+  }
+
+  /* Improved prose for update body content */
+  .prose-update h2 {
+    @apply mt-8 mb-3 text-lg font-bold text-gray-900 first:mt-0;
+  }
+  .prose-update h3 {
+    @apply mt-6 mb-2 text-base font-semibold text-gray-900;
+  }
+  .prose-update p {
+    @apply mb-4 text-sm leading-relaxed text-gray-700;
+  }
+  .prose-update ul {
+    @apply mb-4 list-disc pl-5 text-sm text-gray-700;
+  }
+  .prose-update li {
+    @apply mb-1.5;
+  }
+  .prose-update strong {
+    @apply font-semibold text-gray-900;
+  }
+  .prose-update table {
+    @apply mb-6 w-full text-sm;
+  }
+  .prose-update th {
+    @apply border-b border-gray-200 pb-2 text-left font-semibold text-gray-900;
+  }
+  .prose-update td {
+    @apply border-b border-gray-100 py-2 text-gray-700;
+  }
+  .prose-update a {
+    @apply text-brand-600 underline underline-offset-2 hover:text-brand-700;
+  }
+}
