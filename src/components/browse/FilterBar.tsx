@@ -67,8 +67,7 @@ export function FilterBar() {
 
   const currentCategory = CATEGORIES.find((c) => c.id === category)
   const currentSortLabel = SORT_OPTIONS.find((s) => s.value === sort)?.label ?? 'Newest First'
-  const currentPlatformLabel =
-    PLATFORMS.find((p) => p.value === platform)?.label ?? 'All Platforms'
+  const currentPlatformLabel = PLATFORMS.find((p) => p.value === platform)?.label ?? 'All Platforms'
 
   return (
     <div className="flex flex-col gap-3">
@@ -162,9 +161,7 @@ export function FilterBar() {
         )}
 
         {/* Loading indicator */}
-        {isPending && (
-          <span className="text-xs text-gray-400 animate-pulse">Filtering…</span>
-        )}
+        {isPending && <span className="animate-pulse text-xs text-gray-400">Filtering…</span>}
       </div>
     </div>
   )

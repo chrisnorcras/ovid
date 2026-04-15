@@ -42,7 +42,7 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: 'ppe-problems',
     label: 'PPE Problems',
-    description: "When personal protective equipment becomes personally optional.",
+    description: 'When personal protective equipment becomes personally optional.',
     icon: 'ShieldOff',
     badgeBg: 'bg-brand-100',
     badgeText: 'text-brand-700',
@@ -60,7 +60,7 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: 'forklift-fails',
     label: 'Forklift Fails',
-    description: "Industrial vehicles doing things they were not designed to do.",
+    description: 'Industrial vehicles doing things they were not designed to do.',
     icon: 'Truck',
     badgeBg: 'bg-info-muted',
     badgeText: 'text-info-dark',
@@ -78,7 +78,7 @@ export const CATEGORIES: CategoryMeta[] = [
   {
     id: 'training-moments',
     label: 'Training Moments',
-    description: "Content so educational it hurts. Sometimes literally.",
+    description: 'Content so educational it hurts. Sometimes literally.',
     icon: 'BookOpen',
     badgeBg: 'bg-info-muted',
     badgeText: 'text-info-dark',

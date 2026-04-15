@@ -52,9 +52,7 @@ export async function getVideos(filters: ContentFilters = {}): Promise<VideoItem
       break
     case 'newest':
     default:
-      videos.sort(
-        (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-      )
+      videos.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   }
 
   return videos
@@ -72,9 +70,7 @@ export async function getFeaturedVideos(limit = 4): Promise<VideoItem[]> {
 }
 
 export async function getTrendingVideos(limit = 6): Promise<VideoItem[]> {
-  return [...mockVideos]
-    .sort((a, b) => b.trendingScore - a.trendingScore)
-    .slice(0, limit)
+  return [...mockVideos].sort((a, b) => b.trendingScore - a.trendingScore).slice(0, limit)
 }
 
 export async function getRelatedVideos(video: VideoItem, limit = 3): Promise<VideoItem[]> {

@@ -50,7 +50,7 @@ function AccordionContent({
     <AccordionPrimitive.Content
       className={cn(
         'overflow-hidden text-sm text-gray-600',
-        'data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up',
+        'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
         className
       )}
       {...props}

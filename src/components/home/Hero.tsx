@@ -52,7 +52,12 @@ export function Hero({ videoCount, updateCount }: HeroProps) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-gray-700 bg-transparent text-gray-200 hover:bg-gray-800 hover:text-white">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-gray-700 bg-transparent text-gray-200 hover:bg-gray-800 hover:text-white"
+            >
               <Link href="/updates">
                 <Play className="h-4 w-4" />
                 Latest Compliance Updates

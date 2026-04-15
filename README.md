@@ -8,16 +8,16 @@ A production-ready Next.js content hub for workplace safety culture — curating
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 15 (App Router, React 19) |
-| Language | TypeScript (strict) |
-| Styling | Tailwind CSS v3 |
-| UI Primitives | Radix UI |
-| Icons | Lucide React |
-| Variants | class-variance-authority |
-| Utilities | clsx, tailwind-merge, date-fns |
-| Code Quality | ESLint (next/typescript) + Prettier |
+| Layer         | Technology                          |
+| ------------- | ----------------------------------- |
+| Framework     | Next.js 15 (App Router, React 19)   |
+| Language      | TypeScript (strict)                 |
+| Styling       | Tailwind CSS v3                     |
+| UI Primitives | Radix UI                            |
+| Icons         | Lucide React                        |
+| Variants      | class-variance-authority            |
+| Utilities     | clsx, tailwind-merge, date-fns      |
+| Code Quality  | ESLint (next/typescript) + Prettier |
 
 ---
 
@@ -130,6 +130,7 @@ const response = await fetch(`https://api.example.com/videos?category=${category
 ```
 
 The adapter exports typed async functions:
+
 - `getVideos(filters)` — filtered, sorted video list
 - `getVideoBySlug(slug)` — single video by slug
 - `getFeaturedVideos(limit)` — featured videos
@@ -154,6 +155,7 @@ The YouTube Data API v3 can return video metadata (title, description, thumbnail
 4. Add `YOUTUBE_API_KEY` to your `.env.local`
 
 In `adapter.ts`, replace the mock video fetch with:
+
 ```typescript
 const res = await fetch(
   `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${process.env.YOUTUBE_API_KEY}&part=snippet,statistics`
@@ -167,6 +169,7 @@ For a curated playlist approach, maintain a list of approved video IDs in a CMS 
 TikTok does not have a public search/metadata API suitable for content aggregation. The TikTok Research API requires application approval and has usage restrictions.
 
 **Recommended approach for TikTok content:**
+
 1. Curate TikTok URLs manually and store metadata in your CMS
 2. Use TikTok's oEmbed endpoint (`https://www.tiktok.com/oembed?url=VIDEO_URL`) for embed HTML
 3. Since oEmbed embeds require their JS script to activate, consider using the `thumbnailUrl` fallback card (already implemented in `VideoEmbed.tsx`)
@@ -194,13 +197,13 @@ export async function getVideos(): Promise<VideoItem[]> {
 
 ## Embed Support & Fallbacks
 
-| Platform | Embed Support | Fallback |
-|---|---|---|
-| YouTube | ✅ Full iframe embed via `youtube-nocookie.com` | N/A |
-| YouTube Shorts | ✅ Same embed as YouTube | N/A |
-| TikTok | ⚠️ oEmbed available (JS activation required) | Thumbnail card + outbound link |
-| Instagram Reels | ❌ Embeds require meta approval | Thumbnail card + outbound link |
-| Other | ❌ Varies | Thumbnail card + outbound link |
+| Platform        | Embed Support                                   | Fallback                       |
+| --------------- | ----------------------------------------------- | ------------------------------ |
+| YouTube         | ✅ Full iframe embed via `youtube-nocookie.com` | N/A                            |
+| YouTube Shorts  | ✅ Same embed as YouTube                        | N/A                            |
+| TikTok          | ⚠️ oEmbed available (JS activation required)    | Thumbnail card + outbound link |
+| Instagram Reels | ❌ Embeds require meta approval                 | Thumbnail card + outbound link |
+| Other           | ❌ Varies                                       | Thumbnail card + outbound link |
 
 The `VideoEmbed` component in `src/components/video/VideoEmbed.tsx` handles these cases automatically based on `sourcePlatform` and the presence of `embedUrl`.
 
@@ -210,13 +213,13 @@ The `VideoEmbed` component in `src/components/video/VideoEmbed.tsx` handles thes
 
 The following assets should be added to `/public/`:
 
-| File | Purpose |
-|---|---|
-| `favicon.ico` | Browser tab icon |
-| `favicon.svg` | SVG favicon (modern browsers) |
-| `apple-touch-icon.png` | iOS home screen icon (180×180) |
-| `og-image.png` | Open Graph preview image (1200×630) |
-| `site.webmanifest` | PWA manifest (optional) |
+| File                   | Purpose                             |
+| ---------------------- | ----------------------------------- |
+| `favicon.ico`          | Browser tab icon                    |
+| `favicon.svg`          | SVG favicon (modern browsers)       |
+| `apple-touch-icon.png` | iOS home screen icon (180×180)      |
+| `og-image.png`         | Open Graph preview image (1200×630) |
+| `site.webmanifest`     | PWA manifest (optional)             |
 
 For the OG image, consider using [Next.js OpenGraph Image generation](https://nextjs.org/docs/app/api-reference/file-conventions/opengraph-image) via `src/app/opengraph-image.tsx`.
 
@@ -269,4 +272,4 @@ OSHA standards and federal regulatory text are in the public domain.
 
 ---
 
-*OccTok — informational only, not legal advice.*
+_OccTok — informational only, not legal advice._

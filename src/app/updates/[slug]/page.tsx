@@ -56,7 +56,7 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
       {/* Back link */}
       <Link
         href="/updates"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 mb-6"
+        className="mb-6 inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to Updates
@@ -66,7 +66,7 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
       <article>
         <header className="mb-8">
           {/* Alert badge + category */}
-          <div className="flex flex-wrap items-center gap-2 mb-3">
+          <div className="mb-3 flex flex-wrap items-center gap-2">
             <span
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold ${alertConfig.bg} ${alertConfig.text}`}
             >
@@ -87,7 +87,7 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
           <p className="mt-3 text-base leading-relaxed text-gray-600">{update.summary}</p>
 
           {/* Meta */}
-          <div className="mt-4 flex items-center gap-4 text-sm text-gray-400 border-t border-gray-100 pt-4">
+          <div className="mt-4 flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-400">
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
               {formatDate(update.publishedAt)}
@@ -106,7 +106,7 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
         {/* Source links */}
         {update.sourceLinks.length > 0 && (
           <aside className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5">
-            <h2 className="text-sm font-bold text-gray-700 mb-3">Sources & References</h2>
+            <h2 className="mb-3 text-sm font-bold text-gray-700">Sources & References</h2>
             <ul className="flex flex-col gap-2">
               {update.sourceLinks.map((link) => (
                 <li key={link.url}>
@@ -128,7 +128,7 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
         {/* Tags */}
         {update.tags.length > 0 && (
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            <Tag className="h-4 w-4 text-gray-400 shrink-0" />
+            <Tag className="h-4 w-4 shrink-0 text-gray-400" />
             {update.tags.map((tag) => (
               <span
                 key={tag}
@@ -144,8 +144,8 @@ export default async function UpdateDetailPage({ params }: UpdateDetailPageProps
         <div className="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-4 text-center">
           <p className="text-xs text-gray-400">
             ⚠️ This content is informational only and does not constitute legal advice. For
-            compliance guidance specific to your workplace, consult a qualified EHS professional
-            or attorney.
+            compliance guidance specific to your workplace, consult a qualified EHS professional or
+            attorney.
           </p>
         </div>
       </article>

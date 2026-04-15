@@ -32,7 +32,7 @@ function BrowseInner({ allVideos }: BrowsePageClientProps) {
           v.title.toLowerCase().includes(query) ||
           v.summary.toLowerCase().includes(query) ||
           v.tags.some((t) => t.toLowerCase().includes(query)) ||
-          v.complianceTakeaway.toLowerCase().includes(query),
+          v.complianceTakeaway.toLowerCase().includes(query)
       )
     }
     switch (sort) {
@@ -43,9 +43,7 @@ function BrowseInner({ allVideos }: BrowsePageClientProps) {
         result.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
         break
       default:
-        result.sort(
-          (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-        )
+        result.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     }
     return result
   }, [allVideos, category, platform, sort, q])

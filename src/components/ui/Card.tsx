@@ -21,14 +21,15 @@ function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
 }
 
 function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className={cn('flex items-center p-5 pt-0', className)} {...props} />
-  )
+  return <div className={cn('flex items-center p-5 pt-0', className)} {...props} />
 }
 
 function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={cn('text-base font-semibold leading-snug text-gray-900', className)} {...props} />
+    <h3
+      className={cn('text-base font-semibold leading-snug text-gray-900', className)}
+      {...props}
+    />
   )
 }
 

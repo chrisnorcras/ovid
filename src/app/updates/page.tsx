@@ -10,21 +10,14 @@ export const metadata: Metadata = {
 }
 
 export default async function UpdatesPage() {
-  const [allUpdates, featuredUpdates] = await Promise.all([
-    getUpdates(),
-    getFeaturedUpdates(2),
-  ])
+  const [allUpdates, featuredUpdates] = await Promise.all([getUpdates(), getFeaturedUpdates(2)])
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       {/* Header */}
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
-          Regulatory
-        </p>
-        <h1 className="mt-1 text-3xl font-black text-gray-900 sm:text-4xl">
-          Compliance Updates
-        </h1>
+        <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">Regulatory</p>
+        <h1 className="mt-1 text-3xl font-black text-gray-900 sm:text-4xl">Compliance Updates</h1>
         <p className="mt-2 text-gray-500">
           OSHA standard changes, enforcement guidance, penalty updates, and industry alerts —
           translated into plain English.

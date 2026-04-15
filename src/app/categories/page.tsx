@@ -58,9 +58,7 @@ export default async function CategoriesPage() {
           const Icon = iconMap[cat.icon] ?? AlertTriangle
           const count = countsByCategory[cat.id] ?? 0
 
-          return (
-            <CategoryDetailCard key={cat.id} category={cat} videoCount={count} Icon={Icon} />
-          )
+          return <CategoryDetailCard key={cat.id} category={cat} videoCount={count} Icon={Icon} />
         })}
       </div>
     </div>
@@ -79,7 +77,7 @@ function CategoryDetailCard({
   return (
     <Link
       href={`/browse?category=${category.id}`}
-      className={`group flex gap-5 rounded-2xl border p-6 transition-all hover:shadow-lg hover:-translate-y-0.5 ${category.badgeBg} ${category.borderColor}`}
+      className={`group flex gap-5 rounded-2xl border p-6 transition-all hover:-translate-y-0.5 hover:shadow-lg ${category.badgeBg} ${category.borderColor}`}
     >
       {/* Icon */}
       <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/60`}>
@@ -87,15 +85,17 @@ function CategoryDetailCard({
       </div>
 
       {/* Content */}
-      <div className="flex-1 min-w-0">
+      <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
           <h2 className={`text-base font-bold ${category.badgeText}`}>{category.label}</h2>
-          <Badge className="shrink-0 bg-white/70 text-gray-600 text-[11px]">
+          <Badge className="shrink-0 bg-white/70 text-[11px] text-gray-600">
             {videoCount} {videoCount === 1 ? 'clip' : 'clips'}
           </Badge>
         </div>
         <p className="mt-1.5 text-sm leading-relaxed text-gray-600">{category.description}</p>
-        <span className={`mt-3 inline-flex text-sm font-semibold ${category.badgeText} group-hover:underline`}>
+        <span
+          className={`mt-3 inline-flex text-sm font-semibold ${category.badgeText} group-hover:underline`}
+        >
           Browse →
         </span>
       </div>

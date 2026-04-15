@@ -1,11 +1,6 @@
 // ─── Platform ─────────────────────────────────────────────────────────────────
 
-export type Platform =
-  | 'youtube'
-  | 'youtube-shorts'
-  | 'tiktok'
-  | 'instagram-reels'
-  | 'other'
+export type Platform = 'youtube' | 'youtube-shorts' | 'tiktok' | 'instagram-reels' | 'other'
 
 // ─── Alert Level ──────────────────────────────────────────────────────────────
 

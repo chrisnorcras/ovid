@@ -39,16 +39,14 @@ export function FeaturedVideos({ videos }: FeaturedVideosProps) {
                 className="aspect-video w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-60"
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="mb-2 flex items-center gap-2">
                   <CategoryBadge categoryId={hero.category} />
                   <PlatformBadge platform={hero.sourcePlatform} />
                 </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-brand-300 transition-colors sm:text-xl">
+                <h3 className="text-lg font-bold text-white transition-colors group-hover:text-brand-300 sm:text-xl">
                   {hero.title}
                 </h3>
-                <p className="mt-1.5 text-sm text-gray-300 line-clamp-2">
-                  {hero.summary}
-                </p>
+                <p className="mt-1.5 line-clamp-2 text-sm text-gray-300">{hero.summary}</p>
                 <p className="mt-2 text-xs text-gray-500">{formatRelativeDate(hero.publishedAt)}</p>
               </div>
             </Link>
@@ -70,12 +68,14 @@ export function FeaturedVideos({ videos }: FeaturedVideosProps) {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="min-w-0 flex-1">
                   <CategoryBadge categoryId={video.category} />
-                  <h4 className="mt-1.5 text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
+                  <h4 className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600">
                     {video.title}
                   </h4>
-                  <p className="mt-1 text-xs text-gray-500">{formatRelativeDate(video.publishedAt)}</p>
+                  <p className="mt-1 text-xs text-gray-500">
+                    {formatRelativeDate(video.publishedAt)}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -88,17 +88,11 @@ export function FeaturedVideos({ videos }: FeaturedVideosProps) {
 
 function CategoryBadge({ categoryId }: { categoryId: VideoItem['category'] }) {
   const meta = getCategoryMeta(categoryId)
-  return (
-    <Badge className={`${meta.badgeBg} ${meta.badgeText}`}>
-      {meta.label}
-    </Badge>
-  )
+  return <Badge className={`${meta.badgeBg} ${meta.badgeText}`}>{meta.label}</Badge>
 }
 
 function PlatformBadge({ platform }: { platform: VideoItem['sourcePlatform'] }) {
-  return (
-    <Badge variant="platform">{getPlatformLabel(platform)}</Badge>
-  )
+  return <Badge variant="platform">{getPlatformLabel(platform)}</Badge>
 }
 
 export function SectionHeader({

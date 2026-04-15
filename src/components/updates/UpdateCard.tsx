@@ -52,7 +52,7 @@ export function UpdateCard({ update, featured = false }: UpdateCardProps) {
 
       {/* Title */}
       <h3
-        className={`font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors ${
+        className={`font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600 ${
           featured ? 'text-base' : 'text-sm'
         }`}
       >
@@ -60,7 +60,7 @@ export function UpdateCard({ update, featured = false }: UpdateCardProps) {
       </h3>
 
       {/* Summary */}
-      <p className="text-sm leading-relaxed text-gray-500 line-clamp-3">
+      <p className="line-clamp-3 text-sm leading-relaxed text-gray-500">
         {truncate(update.summary, 200)}
       </p>
 

@@ -12,21 +12,21 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
       {/* Header */}
-      <div className="text-center mb-14">
+      <div className="mb-14 text-center">
         <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-500 shadow-lg">
           <HardHat className="h-8 w-8 text-white" strokeWidth={2} />
         </div>
         <h1 className="text-4xl font-black text-gray-900">About OccTok</h1>
         <p className="mt-3 text-lg text-gray-500">
-          {siteConfig.tagline} Short-form safety content, compliance updates, and the context
-          that makes it stick.
+          {siteConfig.tagline} Short-form safety content, compliance updates, and the context that
+          makes it stick.
         </p>
       </div>
 
       {/* Mission */}
       <section className="mb-12">
-        <h2 className="text-xl font-black text-gray-900 mb-4">What We Do</h2>
-        <div className="prose text-gray-600 text-base leading-relaxed flex flex-col gap-4">
+        <h2 className="mb-4 text-xl font-black text-gray-900">What We Do</h2>
+        <div className="prose flex flex-col gap-4 text-base leading-relaxed text-gray-600">
           <p>
             OccTok is a content hub that curates short-form video content and regulatory updates
             related to OSHA, workplace safety, and compliance. We pull from publicly available
@@ -41,15 +41,15 @@ export default function AboutPage() {
           </p>
           <p>
             OccTok exists in the space between. We treat the content seriously, we treat the
-            compliance context seriously, and we permit ourselves to acknowledge that some of
-            these situations are objectively absurd.
+            compliance context seriously, and we permit ourselves to acknowledge that some of these
+            situations are objectively absurd.
           </p>
         </div>
       </section>
 
       {/* Principles */}
       <section className="mb-12">
-        <h2 className="text-xl font-black text-gray-900 mb-5">Editorial Principles</h2>
+        <h2 className="mb-5 text-xl font-black text-gray-900">Editorial Principles</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {[
             {
@@ -75,7 +75,7 @@ export default function AboutPage() {
             },
             {
               icon: HardHat,
-              title: "Humor With Guardrails",
+              title: 'Humor With Guardrails',
               body: "Yes, some of these clips are funny. We're allowed to acknowledge that while still being clear about the real hazards and real consequences.",
               color: 'text-brand-700',
               bg: 'bg-brand-100',
@@ -83,8 +83,13 @@ export default function AboutPage() {
           ].map((p) => {
             const Icon = p.icon
             return (
-              <div key={p.title} className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5">
-                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${p.bg}`}>
+              <div
+                key={p.title}
+                className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5"
+              >
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${p.bg}`}
+                >
                   <Icon className={`h-5 w-5 ${p.color}`} />
                 </div>
                 <div>
@@ -98,8 +103,8 @@ export default function AboutPage() {
       </section>
 
       {/* What we're not */}
-      <section className="mb-12 rounded-2xl bg-gray-50 border border-gray-200 p-6">
-        <h2 className="text-base font-bold text-gray-900 mb-3">What OccTok Is Not</h2>
+      <section className="mb-12 rounded-2xl border border-gray-200 bg-gray-50 p-6">
+        <h2 className="mb-3 text-base font-bold text-gray-900">What OccTok Is Not</h2>
         <ul className="grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
           {[
             'A social platform or community',
@@ -120,8 +125,7 @@ export default function AboutPage() {
       {/* Disclaimer */}
       <section className="rounded-xl border border-gray-200 bg-white p-5 text-center">
         <p className="text-sm text-gray-500">
-          <strong className="text-gray-700">Important Disclaimer:</strong>{' '}
-          {siteConfig.disclaimer}
+          <strong className="text-gray-700">Important Disclaimer:</strong> {siteConfig.disclaimer}
         </p>
       </section>
     </div>

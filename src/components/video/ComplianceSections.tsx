@@ -33,9 +33,7 @@ export function ComplianceSections({ video }: ComplianceSectionsProps) {
             <h2 className="text-sm font-bold uppercase tracking-wide text-safe-dark">
               Compliance Takeaway
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
-              {video.complianceTakeaway}
-            </p>
+            <p className="mt-2 text-sm leading-relaxed text-gray-700">{video.complianceTakeaway}</p>
           </div>
         </div>
       </div>

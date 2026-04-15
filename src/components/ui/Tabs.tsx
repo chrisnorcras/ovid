@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils'
 
 const Tabs = TabsPrimitive.Root
 
-function TabsList({ className, ...props }: React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>) {
+function TabsList({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>) {
   return (
     <TabsPrimitive.List
-      className={cn(
-        'inline-flex h-10 items-center gap-1 rounded-lg bg-gray-100 p-1',
-        className
-      )}
+      className={cn('inline-flex h-10 items-center gap-1 rounded-lg bg-gray-100 p-1', className)}
       {...props}
     />
   )

@@ -6,8 +6,7 @@ interface VideoEmbedProps {
 }
 
 export function VideoEmbed({ video }: VideoEmbedProps) {
-  const isYouTube =
-    video.sourcePlatform === 'youtube' || video.sourcePlatform === 'youtube-shorts'
+  const isYouTube = video.sourcePlatform === 'youtube' || video.sourcePlatform === 'youtube-shorts'
 
   if (isYouTube && video.embedUrl) {
     return <YouTubeEmbed video={video} />
@@ -64,9 +63,7 @@ function EmbedFallback({ video }: { video: VideoItem }) {
           <Play className="h-7 w-7 text-white" fill="white" />
         </div>
         <div>
-          <p className="text-sm font-semibold text-white">
-            Watch on {platformName}
-          </p>
+          <p className="text-sm font-semibold text-white">Watch on {platformName}</p>
           <p className="mt-1 text-xs text-gray-400">
             {platformName} embeds require viewing on the source platform.
           </p>

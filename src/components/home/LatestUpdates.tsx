@@ -62,7 +62,7 @@ function UpdatePreviewCard({ update }: { update: UpdateItem }) {
 
       {/* Title */}
       <h3
-        className={`text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors ${
+        className={`text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600 ${
           isHighAlert ? 'text-base' : ''
         }`}
       >
@@ -70,9 +70,7 @@ function UpdatePreviewCard({ update }: { update: UpdateItem }) {
       </h3>
 
       {/* Summary */}
-      <p className="text-sm leading-relaxed text-gray-500 line-clamp-2">
-        {update.summary}
-      </p>
+      <p className="line-clamp-2 text-sm leading-relaxed text-gray-500">{update.summary}</p>
 
       <div className="mt-auto flex items-center gap-1 text-xs font-semibold text-brand-600">
         Read update <ArrowRight className="h-3.5 w-3.5" />

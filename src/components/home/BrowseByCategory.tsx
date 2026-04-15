@@ -52,11 +52,9 @@ function CategoryCard({ category }: { category: CategoryMeta }) {
   return (
     <Link
       href={`/browse?category=${category.id}`}
-      className={`group flex flex-col gap-3 rounded-xl border p-5 transition-all hover:shadow-md hover:-translate-y-0.5 ${category.badgeBg} ${category.borderColor}`}
+      className={`group flex flex-col gap-3 rounded-xl border p-5 transition-all hover:-translate-y-0.5 hover:shadow-md ${category.badgeBg} ${category.borderColor}`}
     >
-      <div
-        className={`flex h-10 w-10 items-center justify-center rounded-lg ${category.badgeBg}`}
-      >
+      <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${category.badgeBg}`}>
         <Icon className={`h-5 w-5 ${category.badgeText}`} strokeWidth={2} />
       </div>
       <div>

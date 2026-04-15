@@ -89,13 +89,18 @@ function DropdownMenuLabel({
 }: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label>) {
   return (
     <DropdownMenuPrimitive.Label
-      className={cn('px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-400', className)}
+      className={cn(
+        'px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gray-400',
+        className
+      )}
       {...props}
     />
   )
 }
 
-function DropdownMenuSub({ ...props }: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Sub>) {
+function DropdownMenuSub({
+  ...props
+}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Sub>) {
   return <DropdownMenuPrimitive.Sub {...props} />
 }
 
