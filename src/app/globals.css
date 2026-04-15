@@ -21,10 +21,10 @@
 
   /* Improved prose for update body content */
   .prose-update h2 {
-    @apply mt-8 mb-3 text-lg font-bold text-gray-900 first:mt-0;
+    @apply mb-3 mt-8 text-lg font-bold text-gray-900 first:mt-0;
   }
   .prose-update h3 {
-    @apply mt-6 mb-2 text-base font-semibold text-gray-900;
+    @apply mb-2 mt-6 text-base font-semibold text-gray-900;
   }
   .prose-update p {
     @apply mb-4 text-sm leading-relaxed text-gray-700;

@@ -4,20 +4,20 @@ const pillars = [
   {
     icon: Eye,
     title: "We Watch So You Don't Have To",
-    body: "Short-form content moves fast. Not every OSHA fail makes it onto an official investigation report. We hunt down the clips that illustrate real violations — and explain what the OSHA standard says about them.",
+    body: 'Short-form content moves fast. Not every OSHA fail makes it onto an official investigation report. We hunt down the clips that illustrate real violations — and explain what the OSHA standard says about them.',
     color: 'text-brand-500',
     bg: 'bg-brand-50',
   },
   {
     icon: BookMarked,
     title: 'Compliance Without the Legalese',
-    body: "Regulatory updates are written for lawyers. We translate what changes mean for actual workplaces — which standards are affected, what the new requirements are, and what you should do about them.",
+    body: 'Regulatory updates are written for lawyers. We translate what changes mean for actual workplaces — which standards are affected, what the new requirements are, and what you should do about them.',
     color: 'text-info-dark',
     bg: 'bg-info-muted',
   },
   {
     icon: Lightbulb,
-    title: "The Context That Actually Sticks",
+    title: 'The Context That Actually Sticks',
     body: "People remember stories, not statutes. Every fail comes with a 'What Went Wrong' analysis and a compliance takeaway — because understanding the why is the difference between real safety culture and checkbox theater.",
     color: 'text-safe-dark',
     bg: 'bg-safe-muted',
@@ -25,7 +25,7 @@ const pillars = [
   {
     icon: CheckCircle2,
     title: 'Not Your EHS Software Vendor',
-    body: "OccTok has nothing to sell you. No enterprise platforms, no upsells, no safety consultancy preferred partners. Just curated content, plain-English summaries, and a consistent reminder that OSHA is not messing around.",
+    body: 'OccTok has nothing to sell you. No enterprise platforms, no upsells, no safety consultancy preferred partners. Just curated content, plain-English summaries, and a consistent reminder that OSHA is not messing around.',
     color: 'text-accent-dark',
     bg: 'bg-accent-muted',
   },
@@ -37,7 +37,9 @@ export function WhyItMatters() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">Why OccTok</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+            Why OccTok
+          </p>
           <h2 className="mt-2 text-2xl font-black text-gray-900 sm:text-3xl">
             Safety Content That Respects Your Intelligence
           </h2>

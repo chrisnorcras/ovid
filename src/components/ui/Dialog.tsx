@@ -66,7 +66,7 @@ function SheetContent({
       <DialogPrimitive.Content
         className={cn(
           'fixed inset-y-0 z-50 flex w-72 flex-col bg-white shadow-xl focus:outline-none',
-          'data-[state=open]:animate-slide-in-right data-[state=closed]:translate-x-full',
+          'data-[state=closed]:translate-x-full data-[state=open]:animate-slide-in-right',
           'transition-transform duration-200',
           side === 'left' ? 'left-0' : 'right-0',
           className
@@ -100,10 +100,7 @@ function DialogDescription({
   ...props
 }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>) {
   return (
-    <DialogPrimitive.Description
-      className={cn('text-sm text-gray-500', className)}
-      {...props}
-    />
+    <DialogPrimitive.Description className={cn('text-sm text-gray-500', className)} {...props} />
   )
 }
 

@@ -39,7 +39,7 @@ function TrendingCard({ video, rank }: { video: VideoItem; rank: number }) {
   return (
     <Link
       href={`/videos/${video.slug}`}
-      className="group flex gap-4 rounded-xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md border border-gray-200"
+      className="group flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
     >
       {/* Rank */}
       <div className="flex w-7 shrink-0 items-start pt-0.5">
@@ -69,11 +69,9 @@ function TrendingCard({ video, rank }: { video: VideoItem; rank: number }) {
       </div>
 
       {/* Info */}
-      <div className="flex-1 min-w-0">
-        <Badge className={`${meta.badgeBg} ${meta.badgeText} text-[10px]`}>
-          {meta.label}
-        </Badge>
-        <h3 className="mt-1.5 text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
+      <div className="min-w-0 flex-1">
+        <Badge className={`${meta.badgeBg} ${meta.badgeText} text-[10px]`}>{meta.label}</Badge>
+        <h3 className="mt-1.5 line-clamp-2 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600">
           {video.title}
         </h3>
         <p className="mt-1 text-xs text-gray-400">{getPlatformLabel(video.sourcePlatform)}</p>

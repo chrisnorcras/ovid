@@ -34,11 +34,11 @@ export function RelatedContent({ videos }: RelatedContentProps) {
                   sizes="112px"
                 />
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0 flex-1">
                 <Badge className={`${meta.badgeBg} ${meta.badgeText} text-[10px]`}>
                   {meta.label}
                 </Badge>
-                <h3 className="mt-1 text-xs font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
+                <h3 className="mt-1 line-clamp-2 text-xs font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600">
                   {video.title}
                 </h3>
                 <p className="mt-1 text-[11px] text-gray-400">

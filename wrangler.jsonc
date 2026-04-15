@@ -9,19 +9,19 @@
     "nodejs_compat",
     // Allow fetching URLs in your app
     // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#global-fetch-strictly-public
-    "global_fetch_strictly_public"
+    "global_fetch_strictly_public",
   ],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
   },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
       // The service name must match "name" above
-      "service": "occtok"
-    }
-  ]
+      "service": "occtok",
+    },
+  ],
   // Uncomment to enable R2-based incremental cache (recommended for production):
   // "r2_buckets": [
   //   {

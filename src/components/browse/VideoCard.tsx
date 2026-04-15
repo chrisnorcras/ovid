@@ -59,7 +59,7 @@ export function VideoCard({ video }: VideoCardProps) {
         </Badge>
 
         {/* Title */}
-        <h3 className="mt-2 line-clamp-2 text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand-600 transition-colors">
+        <h3 className="mt-2 line-clamp-2 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-brand-600">
           {video.title}
         </h3>
 

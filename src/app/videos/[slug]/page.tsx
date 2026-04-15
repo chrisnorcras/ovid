@@ -56,7 +56,7 @@ export default async function VideoDetailPage({ params }: VideoDetailPageProps) 
       {/* Back link */}
       <Link
         href="/browse"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 mb-6"
+        className="mb-6 inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to Browse
@@ -64,7 +64,7 @@ export default async function VideoDetailPage({ params }: VideoDetailPageProps) 
 
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 flex-wrap mb-3">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge className={`${categoryMeta.badgeBg} ${categoryMeta.badgeText}`}>
             {categoryMeta.label}
           </Badge>
@@ -83,7 +83,7 @@ export default async function VideoDetailPage({ params }: VideoDetailPageProps) 
             href={video.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 hover:text-brand-600 transition-colors"
+            className="flex items-center gap-1 transition-colors hover:text-brand-600"
           >
             <ExternalLink className="h-4 w-4" />
             View source
@@ -99,7 +99,7 @@ export default async function VideoDetailPage({ params }: VideoDetailPageProps) 
 
           {/* Summary */}
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+            <h2 className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-400">
               Summary
             </h2>
             <p className="text-base leading-relaxed text-gray-700">{video.summary}</p>
@@ -115,12 +115,12 @@ export default async function VideoDetailPage({ params }: VideoDetailPageProps) 
       {/* Tags */}
       {video.tags.length > 0 && (
         <div className="mt-8 flex flex-wrap items-center gap-2">
-          <Tag className="h-4 w-4 text-gray-400 shrink-0" />
+          <Tag className="h-4 w-4 shrink-0 text-gray-400" />
           {video.tags.map((tag) => (
             <Link
               key={tag}
               href={`/browse?q=${encodeURIComponent(tag)}`}
-              className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-600 hover:bg-gray-200 hover:text-gray-900 transition-colors"
+              className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-200 hover:text-gray-900"
             >
               {tag}
             </Link>

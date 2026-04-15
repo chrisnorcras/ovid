@@ -6,7 +6,7 @@ export const mockUpdates: UpdateItem[] = [
     slug: 'osha-maximum-penalty-amounts-fy2025',
     title: 'OSHA Raises Maximum Penalty Amounts for FY 2025',
     summary:
-      "OSHA has announced the annual inflation-adjusted increases to maximum civil penalty amounts effective January 15, 2025. Serious and Other-Than-Serious violations now carry a maximum of $16,550 per violation. Willful and Repeat violations top out at $165,514.",
+      'OSHA has announced the annual inflation-adjusted increases to maximum civil penalty amounts effective January 15, 2025. Serious and Other-Than-Serious violations now carry a maximum of $16,550 per violation. Willful and Repeat violations top out at $165,514.',
     body: `## What Changed
 
 OSHA adjusts its civil penalty amounts annually in accordance with the Federal Civil Penalties Inflation Adjustment Act Improvements Act of 2015. The adjustments for FY 2025 are as follows:
@@ -44,6 +44,10 @@ OSHA's penalty policy also considers factors including: **good faith**, **size o
       {
         label: 'Federal Register Notice',
         url: 'https://www.federalregister.gov/',
+      },
+      {
+        label: 'Q1 2026 OSHA Regulatory Updates — Workplace Compliance Insights',
+        url: 'https://workplacecomplianceinsights.com/articles/q1-2026-osha-regulatory-updates/',
       },
     ],
   },
@@ -95,8 +99,12 @@ OSHA's Hazard Communication Standard (HazCom, 29 CFR 1910.1200) was last majorly
     alertLevel: 'medium',
     sourceLinks: [
       {
-        label: "OSHA HazCom Final Rule",
+        label: 'OSHA HazCom Final Rule',
         url: 'https://www.osha.gov/hazcom',
+      },
+      {
+        label: 'Q1 2026 OSHA Regulatory Updates — Workplace Compliance Insights',
+        url: 'https://workplacecomplianceinsights.com/articles/q1-2026-osha-regulatory-updates/',
       },
     ],
   },
@@ -105,7 +113,7 @@ OSHA's Hazard Communication Standard (HazCom, 29 CFR 1910.1200) was last majorly
     slug: 'walking-working-surfaces-clarification-general-industry',
     title: 'Walking-Working Surfaces Standard: New OSHA Enforcement Guidance',
     summary:
-      "OSHA has issued new enforcement guidance clarifying several provisions of the 2016 Walking-Working Surfaces final rule (29 CFR 1910.21-30), particularly around personal fall protection systems, ladder safety, and dock board requirements. The guidance addresses common compliance questions.",
+      'OSHA has issued new enforcement guidance clarifying several provisions of the 2016 Walking-Working Surfaces final rule (29 CFR 1910.21-30), particularly around personal fall protection systems, ladder safety, and dock board requirements. The guidance addresses common compliance questions.',
     body: `## Overview
 
 The 2016 Walking-Working Surfaces final rule modernized decades-old standards and added personal fall protection system requirements for general industry. OSHA has now issued a memo to area directors clarifying enforcement priorities.
@@ -147,7 +155,7 @@ The 2016 Walking-Working Surfaces final rule modernized decades-old standards an
     slug: 'niosh-heat-illness-prevention-guidance-outdoor-workers',
     title: 'NIOSH Issues Updated Heat Illness Prevention Guidance',
     summary:
-      "NIOSH has released a revised edition of its Heat Stress Guide for Occupational Settings, updating recommended exposure limits (RELs) and providing new guidance for acclimatization programs, engineering controls, and worker monitoring. The previous edition dated from 2016.",
+      'NIOSH has released a revised edition of its Heat Stress Guide for Occupational Settings, updating recommended exposure limits (RELs) and providing new guidance for acclimatization programs, engineering controls, and worker monitoring. The previous edition dated from 2016.',
     body: `## What's New in the 2025 Edition
 
 The National Institute for Occupational Safety and Health (NIOSH) periodically updates its recommended exposure limits and occupational health guidance. The 2025 Heat Stress update reflects new research on heat-related illness, climate trends, and effective intervention strategies.
@@ -188,6 +196,10 @@ OSHA's proposed Heat Illness Prevention Standard for outdoor and indoor workers 
       {
         label: 'NIOSH Heat Illness Page',
         url: 'https://www.cdc.gov/niosh/topics/heatstress/',
+      },
+      {
+        label: 'Heat Illness Prevention in 2026 — Workplace Compliance Insights',
+        url: 'https://workplacecomplianceinsights.com/articles/heat-illness-prevention-employer-guide-summer-2026/',
       },
     ],
   },
@@ -234,6 +246,11 @@ General industry: Must conduct initial air monitoring to assess exposures. Expos
         label: 'OSHA Engineered Stone Hazard Alert',
         url: 'https://www.osha.gov/silica-crystalline/engineered-stone',
       },
+      {
+        label:
+          'OSHA Cites Georgia Stone Manufacturers for Silica Violations — Workplace Compliance Insights',
+        url: 'https://workplacecomplianceinsights.com/articles/osha-silica-enforcement-stone-fabrication-2026/',
+      },
     ],
   },
   {
@@ -241,7 +258,7 @@ General industry: Must conduct initial air monitoring to assess exposures. Expos
     slug: 'nfpa-70e-2024-electrical-safety-changes',
     title: 'NFPA 70E 2024 Edition: Key Electrical Safety Changes Explained',
     summary:
-      "The 2024 edition of NFPA 70E, Standard for Electrical Safety in the Workplace, has been released with several important changes including revised arc flash risk assessment requirements, updated PPE category tables, and new guidance on remote operation and battery energy storage systems.",
+      'The 2024 edition of NFPA 70E, Standard for Electrical Safety in the Workplace, has been released with several important changes including revised arc flash risk assessment requirements, updated PPE category tables, and new guidance on remote operation and battery energy storage systems.',
     body: `## About NFPA 70E
 
 NFPA 70E is the primary consensus standard for electrical safety in the workplace. While not directly OSHA-enforceable, OSHA cites it as the recognized industry standard under the General Duty Clause and directly within 1910.333. The 2024 edition introduces meaningful changes.
@@ -285,9 +302,9 @@ OSHA 29 CFR 1910.333 and 1910.269 reference NFPA 70E. If an incident occurs and 
   {
     id: 'upd-007',
     slug: 'cal-osha-indoor-heat-illness-prevention-proposal',
-    title: "Cal/OSHA Proposes Stricter Indoor Heat Illness Prevention Rule",
+    title: 'Cal/OSHA Proposes Stricter Indoor Heat Illness Prevention Rule',
     summary:
-      "California OSHA has proposed an Indoor Heat Illness Prevention standard that would require employers to take preventive measures when indoor temperatures reach 82°F, with additional requirements at 87°F. The proposed rule covers most indoor workplaces including warehouses, kitchens, and manufacturing.",
+      'California OSHA has proposed an Indoor Heat Illness Prevention standard that would require employers to take preventive measures when indoor temperatures reach 82°F, with additional requirements at 87°F. The proposed rule covers most indoor workplaces including warehouses, kitchens, and manufacturing.',
     body: `## Overview
 
 Cal/OSHA already has an outdoor Heat Illness Prevention regulation. The proposed Indoor standard extends those protections to workers in covered indoor settings. California's warehouse workers, kitchen staff, and manufacturing workers face significant heat exposure — particularly in facilities without adequate climate control.
@@ -327,8 +344,12 @@ California employers in: warehouses, fulfillment centers, restaurant kitchens, f
     alertLevel: 'medium',
     sourceLinks: [
       {
-        label: "Cal/OSHA Proposed Indoor Heat Standard",
+        label: 'Cal/OSHA Proposed Indoor Heat Standard',
         url: 'https://www.dir.ca.gov/dosh/dosh_publications/HeatIllnessguideline.pdf',
+      },
+      {
+        label: 'OSHA Heat Hazard NEP Update — Workplace Compliance Insights',
+        url: 'https://workplacecomplianceinsights.com/articles/osha-heat-nep-update-2026-employer-guide/',
       },
     ],
   },

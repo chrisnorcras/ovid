@@ -20,7 +20,7 @@ export function FeaturedAlert({ update }: FeaturedAlertProps) {
       {isHighSeverity && (
         <div
           aria-hidden
-          className="pointer-events-none absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-hazard/10"
+          className="pointer-events-none absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-hazard/10"
         />
       )}
 
@@ -31,7 +31,7 @@ export function FeaturedAlert({ update }: FeaturedAlertProps) {
           <AlertTriangle className={`h-6 w-6 ${alertConfig.text}`} />
         </div>
 
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           {/* Badge + date */}
           <div className="flex flex-wrap items-center gap-2">
             <span
@@ -44,7 +44,7 @@ export function FeaturedAlert({ update }: FeaturedAlertProps) {
           </div>
 
           {/* Title */}
-          <h3 className="mt-2 text-base font-bold leading-snug text-gray-900 group-hover:text-brand-700 transition-colors sm:text-lg">
+          <h3 className="mt-2 text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-brand-700 sm:text-lg">
             {update.title}
           </h3>
 
@@ -54,7 +54,8 @@ export function FeaturedAlert({ update }: FeaturedAlertProps) {
           </p>
 
           <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-brand-600">
-            Read full update <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            Read full update{' '}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </div>
         </div>
       </div>
